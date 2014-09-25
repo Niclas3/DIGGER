@@ -30,16 +30,30 @@ for i in range(len(articles)):
 
 # print downloadTable
 
-fb = open('./list.txt', 'a')  # appand list to the new list
+fb= open('./list.txt', 'a')  # appand list to the new list
+
 for url, title in downloadTable:
     fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 fb.close()
 
 for articPair in downloadTable:  # To read each article's
     artic = urllib.urlopen(articPair[0])
-    print "Do you want read next article %s.(Y/N)" % (articPair[1])
+    title = articPair[1]
+    print "Do you want read next article %s.(Y/N)" % title
     chrack = raw_input()
     if(chrack == 'N'):
         continue
     else:
-        print BeautifulSoup(artic.read())  # BeautifulSoup(artic.read()).body
+        context = BeautifulSoup(artic.read())  # It is BeautifulSoup type not String
+        '''
+            Ones page has img tag and I need download it
+        '''
+        print context.find_all('img')
+        #with open('./'+title, 'w') as fbaitic:
+        #    fbaitic.write(str(context))
+
+
+
+
+
+
