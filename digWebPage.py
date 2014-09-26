@@ -38,13 +38,14 @@ for i in range(len(articles)):
 
     downloadTable.append((href, title))
 
-# print downloadTable
+'''
+    This list.txt file should append single line for each url visit,
+    so I want to cheack out the last line of this file.
+'''
 
-fb = open('./list.txt', 'a')  # appand list to the new list
-
-for url, title in downloadTable:
-    fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
-fb.close()
+with open('./list.txt', 'a') as fb:  # appand list to the new list
+    for url, title in downloadTable:
+        fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 
 for articPair in downloadTable:  # To read each article's
     artic = urllib.urlopen(articPair[0])
@@ -59,6 +60,7 @@ for articPair in downloadTable:  # To read each article's
             Ones page has img tag and I need download it
         '''
         if context.find_all('img'):
+            imgName = '2'
             for imgTag in context.find_all('img'):
                 with open('./'+imgName+'.jpeg', 'a') as img:
                     img.write(urllib.urlopen(imgTag['src']).read())
