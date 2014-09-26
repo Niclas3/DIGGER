@@ -12,6 +12,7 @@ __author__ = 'Niclas'
 '''
 
 import urllib
+import re
 from bs4 import BeautifulSoup
 
 
@@ -52,6 +53,7 @@ for articPair in downloadTable:  # To read each article's
     title = articPair[1]
     print "Do you want read next article %s.(Y/N)" % title
     chrack = raw_input()
+
     if(chrack == 'N'):
         continue
     else:
@@ -60,10 +62,13 @@ for articPair in downloadTable:  # To read each article's
             Ones page has img tag and I need download it
         '''
         if context.find_all('img'):
-            imgName = '2'
             for imgTag in context.find_all('img'):
-                with open('./'+imgName+'.jpeg', 'a') as img:
-                    img.write(urllib.urlopen(imgTag['src']).read())
+                rawimgName = re.search(r'\b[a-z]*.\b[a-z]*\b"', str(imgTag)).group()
+                imgName = rawimgName[:-1]
+                print imgName
+
+                #with open('./'+imgName[:-1]+'.jpeg', 'a') as img:
+                #    img.write(urllib.urlopen(imgTag['src']).read())
         else:
             pass
         # with open('./'+title, 'w') as fbaitic:
