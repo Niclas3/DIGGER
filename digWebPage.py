@@ -13,6 +13,7 @@ __author__ = 'Niclas'
 
 import urllib
 import re
+import os
 from bs4 import BeautifulSoup
 
 
@@ -29,6 +30,7 @@ urlIndex = urllib.urlopen('http://www.yinwang.org/')
 context = urlIndex.read()
 soup = BeautifulSoup(context)
 downloadTable = []  # downloadTable = { } # store the K:V with href and title
+filedImageurl = []  # collect pictrue when my REGEX can not match it.
 
 articles = soup.find_all('li', class_='list-group-item title')
 
@@ -48,13 +50,13 @@ with open('./list.txt', 'a') as fb:  # appand list to the new list
     for url, title in downloadTable:
         fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 
-for articPair in downloadTable:  # To read each article's
+for id, articPair in enumerate(downloadTable):  # To read each article's
     artic = urllib.urlopen(articPair[0])
     title = articPair[1]
-    print "Do you want read next article %s.(Y/N)" % title
-    chrack = raw_input()
+    print "Do you want read next article %s.(Y/N) %d" % (title, id)
+    chrack = 'a'  # raw_input('Y\n')
 
-    if(chrack == 'N'):
+    if chrack == 'N':
         continue
     else:
         context = BeautifulSoup(artic.read())
@@ -62,14 +64,21 @@ for articPair in downloadTable:  # To read each article's
             Ones page has img tag and I need download it
         '''
         if context.find_all('img'):
+            if not os.path.exists('./img'):  # Just working at the first time.
+                os.mkdir('./img')
             for imgTag in context.find_all('img'):
-                rawimgName = re.search(r'\b[a-z]*.\b[a-z]*\b"', str(imgTag)).group()
-                imgName = rawimgName[:-1]
-                print imgName
-
-                #with open('./'+imgName[:-1]+'.jpeg', 'a') as img:
-                #    img.write(urllib.urlopen(imgTag['src']).read())
-        else:
-            pass
-        # with open('./'+title, 'w') as fbaitic:
-        #     fbaitic.write(str(context))
+                '''
+                    if you can not understand the code, let it go......
+                '''
+                rawimgName = re.search(r'\b[a-z]*.\b[a-z]*\b"', str(imgTag))
+                if not rawimgName:  # fix regex bug.
+                    filedImageurl.append(str(imgTag))
+                    print "pic donwloads failed.", title
+                else:
+                    imgName = rawimgName.group()[:-1]
+                    with open('./img/'+imgName, 'a') as img:
+                        img.write(urllib.urlopen(imgTag['src']).read())
+        if not os.path.exists('./artical'):
+            os.mkdir('./artical')
+        with open('./artical/'+title, 'w') as fbaitic:
+            fbaitic.write(str(context))
