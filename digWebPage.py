@@ -76,7 +76,6 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
                     print "pic donwloads failed.", title
                 else:
                     if rawimgName.group()[:-1][0] == '.':
-                        print 'Find A point.'
                         imgName = str(imgid)+title+rawimgName.group()[:-1]
                     else:
                         imgName = rawimgName.group()[:-1]
