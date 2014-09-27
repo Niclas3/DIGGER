@@ -51,9 +51,9 @@ with open('./list.txt', 'a') as fb:  # appand list to the new list
         fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 
 for id, articPair in enumerate(downloadTable):  # To read each article's
+    articurl = articPair[0]
     artic = urllib.urlopen(articPair[0])
     title = articPair[1]
-    print "Do you want read next article %s.(Y/N) %d" % (title, id)
     chrack = 'a'  # raw_input('Y\n')
 
     if chrack == 'N':
@@ -78,7 +78,14 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
                     imgName = rawimgName.group()[:-1]
                     with open('./img/'+imgName, 'a') as img:
                         img.write(urllib.urlopen(imgTag['src']).read())
+
         if not os.path.exists('./artical'):
             os.mkdir('./artical')
+        publishTime = re.search(r'\d{4}\/\d{1,2}\/\d{1,2}', articurl)
+        if not publishTime:
+            title = 'IDNT'+title
+        else:
+            title = publishTime.group().replace('/', '-')+title
         with open('./artical/'+title, 'w') as fbaitic:
             fbaitic.write(str(context))
+        print "Do you want read next article %s. %d" % (title, id)
