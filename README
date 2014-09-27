@@ -1,0 +1,15 @@
+The Development Diary
+日 12 22 23:10:43 CST 2013
+Today I am begin with the learning in urllib2 model,
+I want to make my app viste site just like the Brower,
+There are one function named "add_header()",
+which is used by a brower to identify itself - some HTTP servers only allow requests coming from common browers as opposed to scripts,
+NOTE: urllib2's default user agent string is "Python-urllib/2.6" (on Python 2.6)
+so ,I will test my script in tomorrow noon .
+good night ZYF......
+
+
+2014年 9月28日 星期日 00时26分02秒 CST
+  基本实现了访问网站并且下载全部文档和文档中的图片的功能。并且能够处理不能
+处理的图片的URL。
+ 希望能再下一个版本中实现代码的复用和可以自动辨别新文章的提醒功能。
