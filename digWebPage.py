@@ -66,7 +66,7 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
         if context.find_all('img'):
             if not os.path.exists('./img'):  # Just working at the first time.
                 os.mkdir('./img')
-            for imgTag in context.find_all('img'):
+            for imgid, imgTag in enumerate(context.find_all('img')):
                 '''
                     if you can not understand the code, let it go......
                 '''
@@ -75,7 +75,11 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
                     filedImageurl.append(str(imgTag))
                     print "pic donwloads failed.", title
                 else:
-                    imgName = rawimgName.group()[:-1]
+                    if rawimgName.group()[:-1][0] == '.':
+                        print 'Find A point.'
+                        imgName = str(imgid)+title+rawimgName.group()[:-1]
+                    else:
+                        imgName = rawimgName.group()[:-1]
                     with open('./img/'+imgName, 'a') as img:
                         img.write(urllib.urlopen(imgTag['src']).read())
 
@@ -86,6 +90,6 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
             title = 'IDNT'+title
         else:
             title = publishTime.group().replace('/', '-')+title
-        with open('./artical/'+title, 'w') as fbaitic:
+        with open('./artical/'+title+'html', 'w') as fbaitic:
             fbaitic.write(str(context))
         print "Do you want read next article %s. %d" % (title, id)
