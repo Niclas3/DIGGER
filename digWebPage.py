@@ -46,7 +46,7 @@ for i in range(len(articles)):
     so I want to cheack out the last line of this file.
 '''
 
-with open('./list.txt', 'a') as fb:  # appand list to the new list
+with open('./list.txt', 'a+') as fb:  # appand list to the new list
     for url, title in downloadTable:
         fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 
@@ -89,6 +89,6 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
             title = 'IDNT'+title
         else:
             title = publishTime.group().replace('/', '-')+title
-        with open('./artical/'+title+'html', 'w') as fbaitic:
+        with open('./artical/'+title+'.html', 'w') as fbaitic:
             fbaitic.write(str(context))
         print "Do you want read next article %s. %d" % (title, id)
