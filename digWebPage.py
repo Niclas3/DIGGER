@@ -46,7 +46,7 @@ for i in range(len(articles)):
     so I want to cheack out the last line of this file.
 '''
 
-with open('./list.txt', 'a+') as fb:  # appand list to the new list
+with open('./list.txt', 'a') as fb:  # appand list to the new list
     for url, title in downloadTable:
         fb.write('%s %s\n' % (url.encode('utf8'), title.encode('utf8')))
 
@@ -54,41 +54,38 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
     articurl = articPair[0]
     artic = urllib.urlopen(articPair[0])
     title = articPair[1]
-    chrack = 'a'  # raw_input('Y\n')
+    context = BeautifulSoup(artic.read())
 
-    if chrack == 'N':
-        continue
-    else:
-        context = BeautifulSoup(artic.read())
-        ''' It is BeautifulSoup type not String
-            Ones page has img tag and I need download it
-        '''
-        if context.find_all('img'):
-            if not os.path.exists('./img'):  # Just working at the first time.
-                os.mkdir('./img')
-            for imgid, imgTag in enumerate(context.find_all('img')):
-                '''
-                    if you can not understand the code, let it go......
-                '''
-                rawimgName = re.search(r'\b[a-z]*.\b[a-z]*\b"', str(imgTag))
-                if not rawimgName:  # fix regex bug.
-                    filedImageurl.append(str(imgTag))
-                    print "pic donwloads failed.", title
+    ''' It is BeautifulSoup type not String
+        Ones page has img tag and I need download it
+    '''
+    if context.find_all('img'):
+        if not os.path.exists('./img'):  # Just working at the first time.
+            os.mkdir('./img')
+        for imgid, imgTag in enumerate(context.find_all('img')):
+            '''
+                if you can not understand the code, let it go......
+            '''
+            rawimgName = re.search(r'\b[a-z]*.\b[a-z]*\b"', str(imgTag))
+            if not rawimgName:  # fix regex bug.
+                filedImageurl.append(str(imgTag))
+                print "pic donwloads failed.", title
+            else:
+                if rawimgName.group()[:-1][0] == '.':
+                    print 'Find A point.'
+                    imgName = str(imgid)+title+rawimgName.group()[:-1]
                 else:
-                    if rawimgName.group()[:-1][0] == '.':
-                        imgName = str(imgid)+title+rawimgName.group()[:-1]
-                    else:
-                        imgName = rawimgName.group()[:-1]
-                    with open('./img/'+imgName, 'a') as img:
-                        img.write(urllib.urlopen(imgTag['src']).read())
+                    imgName = rawimgName.group()[:-1]
+                with open('./img/'+imgName, 'a') as img:
+                    img.write(urllib.urlopen(imgTag['src']).read())
 
-        if not os.path.exists('./artical'):
-            os.mkdir('./artical')
-        publishTime = re.search(r'\d{4}\/\d{1,2}\/\d{1,2}', articurl)
-        if not publishTime:
-            title = 'IDNT'+title
-        else:
-            title = publishTime.group().replace('/', '-')+title
-        with open('./artical/'+title+'.html', 'w') as fbaitic:
-            fbaitic.write(str(context))
-        print "Do you want read next article %s. %d" % (title, id)
+    if not os.path.exists('./artical'):
+        os.mkdir('./artical')
+    publishTime = re.search(r'\d{4}\/\d{1,2}\/\d{1,2}', articurl)
+    if not publishTime:
+        title = 'IDNT'+title
+    else:
+        title = publishTime.group().replace('/', '-')+title
+    with open('./artical/'+title+'html', 'w') as fbaitic:
+        fbaitic.write(str(context))
+    print "Do you want read next article %s. %d" % (title, id)
