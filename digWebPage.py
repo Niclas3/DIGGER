@@ -27,8 +27,8 @@ def typess(fn):
     return _warp
 
 urlIndex = urllib.urlopen('http://www.yinwang.org/')
-context = urlIndex.read()
-soup = BeautifulSoup(context)
+indexContext = urlIndex.read()
+soup = BeautifulSoup(indexContext)
 downloadTable = []  # downloadTable = { } # store the K:V with href and title
 filedImageurl = []  # collect pictrue when my REGEX can not match it.
 
@@ -52,17 +52,17 @@ with open('./list.txt', 'a') as fb:  # appand list to the new list
 
 for id, articPair in enumerate(downloadTable):  # To read each article's
     articurl = articPair[0]
-    artic = urllib.urlopen(articPair[0])
     title = articPair[1]
-    context = BeautifulSoup(artic.read())
+    artic = urllib.urlopen(articurl)
+    pageContext = BeautifulSoup(artic.read())
 
     ''' It is BeautifulSoup type not String
         Ones page has img tag and I need download it
     '''
-    if context.find_all('img'):
+    if pageContext.find_all('img'):
         if not os.path.exists('./img'):  # Just working at the first time.
             os.mkdir('./img')
-        for imgid, imgTag in enumerate(context.find_all('img')):
+        for imgid, imgTag in enumerate(pageContext.find_all('img')):
             '''
                 if you can not understand the code, let it go......
             '''
@@ -87,5 +87,5 @@ for id, articPair in enumerate(downloadTable):  # To read each article's
     else:
         title = publishTime.group().replace('/', '-')+title
     with open('./artical/'+title+'html', 'w') as fbaitic:
-        fbaitic.write(str(context))
+        fbaitic.write(str(pageContext))
     print "Do you want read next article %s. %d" % (title, id)
