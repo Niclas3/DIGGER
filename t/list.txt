@@ -1,0 +1,48 @@
+http://yinwang.org/blog-cn/2014/09/29/beijing 蝙蝠侠归来
+http://yinwang.org/blog-cn/2014/09/15/innovation 谈创新
+http://yinwang.org/blog-cn/2014/09/13/chengdu-bus 给成都公交的设计建议
+http://yinwang.org/blog-cn/2014/08/29/faq FAQ
+http://yinwang.org/blog-cn/2014/08/11/genius 怎样成为一个天才
+http://yinwang.org/blog-cn/2014/04/24/sql-nosql SQL，NoSQL 以及数据库的实质
+http://yinwang.org/blog-cn/2014/04/18/golang 对 Go 语言的综合评价
+http://yinwang.org/blog-cn/2014/04/11/hacker-culture 黑客文化的精髓
+http://yinwang.org/blog-cn/2014/04/07/racket-pig 天下第一萌程序
+http://yinwang.org/blog-cn/2014/02/18/dijkstra-interview 一个对 Dijkstra 的采访视频
+http://yinwang.org/blog-cn/2014/02/04/pl-tool 程序语言与它们的工具
+http://yinwang.org/blog-cn/2014/01/28/rubysonar RubySonar：一个 Ruby 静态分析器
+http://yinwang.org/blog-cn/2014/01/25/pl-and 程序语言与……
+http://yinwang.org/blog-cn/2013/10/29/pysonar2 PySonar2 开源了
+http://yinwang.org/blog-cn/2013/07/13/church-turing 丘奇和图灵
+http://yinwang.org/blog-cn/2013/07/06/PyDiff-Python%E7%BB%93%E6%9E%84%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7 Pydiff Python结构化程序比较工具
+http://yinwang.org/blog-cn/2013/04/26/reason-and-proof 原因与证明
+http://yinwang.org/blog-cn/2013/04/21/ydiff-%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83 Ydiff 结构化的程序比较
+http://yinwang.org/blog-cn/2013/04/21/programming-languages-are-not-tools 程序语言不是工具
+http://yinwang.org/blog-cn/2013/04/20/editor-ide 编辑器与IDE
+http://yinwang.org/blog-cn/2013/04/18/language-design-mistake2 程序语言的常见设计错误(2) - 试图容纳世界
+http://yinwang.org/blog-cn/2013/04/17/languages 关于语言的思考
+http://yinwang.org/blog-cn/2013/04/14/yoda-notation Yoda 表示法错在哪里
+http://yinwang.org/blog-cn/2013/04/14/terminology 几个超炫的专业词汇
+http://yinwang.org/blog-cn/2013/04/14/standard-exam-language 标准化试卷标记语言
+http://yinwang.org/blog-cn/2013/04/14/os-design 一种新的操作系统设计
+http://yinwang.org/blog-cn/2013/04/14/markdown Markdown 的一些问题
+http://yinwang.org/blog-cn/2013/04/13/generality 谈程序的“通用性”
+http://yinwang.org/blog-cn/2013/04/12/inspiration 什么是启发
+http://yinwang.org/blog-cn/2013/04/11/scheme-setup Scheme 编程环境的设置
+http://yinwang.org/blog-cn/2013/04/07/test-driven-dev 谈“测试驱动的开发”
+http://yinwang.org/blog-cn/2013/04/03/einstein-on-education 爱因斯坦谈教育
+http://yinwang.org/blog-cn/2013/04/02/currying 谈谈 Currying
+http://yinwang.org/blog-cn/2013/04/01/lazy-evaluation 谈惰性求值
+http://yinwang.org/blog-cn/2013/03/31/purely-functional 对函数式语言的误解
+http://yinwang.org/blog-cn/2013/03/29/scripting-language 什么是“脚本语言”
+http://yinwang.org/blog-cn/2013/03/26/lisp-dead-alive Lisp 已死，Lisp 万岁！
+http://yinwang.org/blog-cn/2013/03/19/eliminate-problems “解决问题”与“消灭问题”
+http://yinwang.org/blog-cn/2013/03/15/language-design-mistake1 程序语言的常见设计错误(1) - 片面追求短小
+http://yinwang.org/blog-cn/2013/03/08/on-syntax 谈语法
+http://yinwang.org/blog-cn/2013/03/07/oberon Oberon 操作系统：被忽略的珍宝
+http://yinwang.org/blog-cn/2013/03/07/linux-windows-mac 谈 Linux，Windows 和 Mac
+http://yinwang.org/blog-cn/2013/03/07/design-patterns 解密“设计模式”
+http://yinwang.org/blog-cn/2013/03/04/braid Braid - 一个发人深思的游戏
+http://yinwang.org/blog-cn/2012/09/18/texmacs TeXmacs：一个真正“所见即所得”的排版系统
+http://yinwang.org/blog-cn/2012/08/01/interpreter 怎样写一个解释器
+http://yinwang.org/blog-cn/2012/07/25/semantics 什么是语义学
+http://yinwang.org/blog-cn/2012/05/18/user-friendliness 什么是“对用户友好”
