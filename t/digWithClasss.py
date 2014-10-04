@@ -33,10 +33,11 @@ class Spider (object):
     def downloadPage(self, articurl):
         artic = urllib.urlopen(articurl)
         pageContext = BeautifulSoup(artic.read())
-        self.saveImg(pageContext)
-        self.saveArtical(articurl, pageContext)
+        saveImg(pageContext)
+        saveArtical(articurl, pageContext)
 
-    def saveImg(self, pageContext):
+    @classmethod
+    def saveImg(pageContext):
         title = ''
         if not os.path.exists('./img'):  # Just working at the first time.
             os.mkdir('./img')
@@ -57,7 +58,8 @@ class Spider (object):
                 with open('./img/'+imgName, 'a') as img:
                     img.write(urllib.urlopen(imgTag['src']).read())
 
-    def saveArtical(self, articurl, pageContext):
+    @classmethod
+    def saveArtical(articurl, pageContext):
         title = ''
         if not os.path.exists('./artical'):
             os.mkdir('./artical')
