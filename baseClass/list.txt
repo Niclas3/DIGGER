@@ -1,0 +1,59 @@
+http://learnvimscriptthehardway.stevelosh.com/preface.html Preface
+http://learnvimscriptthehardway.stevelosh.com/acknowledgements.html Acknowledgements
+http://learnvimscriptthehardway.stevelosh.com/chapters/00.html Prerequisites
+http://learnvimscriptthehardway.stevelosh.com/chapters/01.html Echoing Messages
+http://learnvimscriptthehardway.stevelosh.com/chapters/02.html Setting Options
+http://learnvimscriptthehardway.stevelosh.com/chapters/03.html Basic Mapping
+http://learnvimscriptthehardway.stevelosh.com/chapters/04.html Modal Mapping
+http://learnvimscriptthehardway.stevelosh.com/chapters/05.html Strict Mapping
+http://learnvimscriptthehardway.stevelosh.com/chapters/06.html Leaders
+http://learnvimscriptthehardway.stevelosh.com/chapters/07.html Editing Your Vimrc
+http://learnvimscriptthehardway.stevelosh.com/chapters/08.html Abbreviations
+http://learnvimscriptthehardway.stevelosh.com/chapters/09.html More Mappings
+http://learnvimscriptthehardway.stevelosh.com/chapters/10.html Training Your Fingers
+http://learnvimscriptthehardway.stevelosh.com/chapters/11.html Buffer-Local Options and Mappings
+http://learnvimscriptthehardway.stevelosh.com/chapters/12.html Autocommands
+http://learnvimscriptthehardway.stevelosh.com/chapters/13.html Buffer-Local Abbreviations
+http://learnvimscriptthehardway.stevelosh.com/chapters/14.html Autocommand Groups
+http://learnvimscriptthehardway.stevelosh.com/chapters/15.html Operator-Pending Mappings
+http://learnvimscriptthehardway.stevelosh.com/chapters/16.html More Operator-Pending Mappings
+http://learnvimscriptthehardway.stevelosh.com/chapters/17.html Status Lines
+http://learnvimscriptthehardway.stevelosh.com/chapters/18.html Responsible Coding
+http://learnvimscriptthehardway.stevelosh.com/chapters/19.html Variables
+http://learnvimscriptthehardway.stevelosh.com/chapters/20.html Variable Scoping
+http://learnvimscriptthehardway.stevelosh.com/chapters/21.html Conditionals
+http://learnvimscriptthehardway.stevelosh.com/chapters/22.html Comparisons
+http://learnvimscriptthehardway.stevelosh.com/chapters/23.html Functions
+http://learnvimscriptthehardway.stevelosh.com/chapters/24.html Function Arguments
+http://learnvimscriptthehardway.stevelosh.com/chapters/25.html Numbers
+http://learnvimscriptthehardway.stevelosh.com/chapters/26.html Strings
+http://learnvimscriptthehardway.stevelosh.com/chapters/27.html String Functions
+http://learnvimscriptthehardway.stevelosh.com/chapters/28.html Execute
+http://learnvimscriptthehardway.stevelosh.com/chapters/29.html Normal
+http://learnvimscriptthehardway.stevelosh.com/chapters/30.html Execute Normal!
+http://learnvimscriptthehardway.stevelosh.com/chapters/31.html Basic Regular Expressions
+http://learnvimscriptthehardway.stevelosh.com/chapters/32.html Case Study: Grep Operator, Part One
+http://learnvimscriptthehardway.stevelosh.com/chapters/33.html Case Study: Grep Operator, Part Two
+http://learnvimscriptthehardway.stevelosh.com/chapters/34.html Case Study: Grep Operator, Part Three
+http://learnvimscriptthehardway.stevelosh.com/chapters/35.html Lists
+http://learnvimscriptthehardway.stevelosh.com/chapters/36.html Looping
+http://learnvimscriptthehardway.stevelosh.com/chapters/37.html Dictionaries
+http://learnvimscriptthehardway.stevelosh.com/chapters/38.html Toggling
+http://learnvimscriptthehardway.stevelosh.com/chapters/39.html Functional Programming
+http://learnvimscriptthehardway.stevelosh.com/chapters/40.html Paths
+http://learnvimscriptthehardway.stevelosh.com/chapters/41.html Creating a Full Plugin
+http://learnvimscriptthehardway.stevelosh.com/chapters/42.html Plugin Layout in the Dark Ages
+http://learnvimscriptthehardway.stevelosh.com/chapters/43.html A New Hope: Plugin Layout with Pathogen
+http://learnvimscriptthehardway.stevelosh.com/chapters/44.html Detecting Filetypes
+http://learnvimscriptthehardway.stevelosh.com/chapters/45.html Basic Syntax Highlighting
+http://learnvimscriptthehardway.stevelosh.com/chapters/46.html Advanced Syntax Highlighting
+http://learnvimscriptthehardway.stevelosh.com/chapters/47.html Even More Advanced Syntax Highlighting
+http://learnvimscriptthehardway.stevelosh.com/chapters/48.html Basic Folding
+http://learnvimscriptthehardway.stevelosh.com/chapters/49.html Advanced Folding
+http://learnvimscriptthehardway.stevelosh.com/chapters/50.html Section Movement Theory
+http://learnvimscriptthehardway.stevelosh.com/chapters/51.html Potion Section Movement
+http://learnvimscriptthehardway.stevelosh.com/chapters/52.html External Commands
+http://learnvimscriptthehardway.stevelosh.com/chapters/53.html Autoloading
+http://learnvimscriptthehardway.stevelosh.com/chapters/54.html Documentation
+http://learnvimscriptthehardway.stevelosh.com/chapters/55.html Distribution
+http://learnvimscriptthehardway.stevelosh.com/chapters/56.html What Now?
